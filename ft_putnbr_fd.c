@@ -6,7 +6,7 @@
 /*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 23:38:19 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/20 23:38:29 by zwode            ###   ########.fr       */
+/*   Updated: 2019/04/21 04:34:35 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(-n, fd);
 	}
 	if (n < 10)
-		ft_putchar_fd(n + 48, fd);
+		ft_putchar_fd(n + '0', fd);
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);

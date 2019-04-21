@@ -6,7 +6,7 @@
 /*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 20:17:32 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/20 20:18:48 by zwode            ###   ########.fr       */
+/*   Updated: 2019/04/21 02:38:00 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strstr(const char *s, const char *find)
 	int	j;
 
 	i = 0;
-	if ((unsigned char)s[0] == '\0')
+	if ((unsigned char)find[0] == '\0')
 		return ((char*)s);
 	while (s[i] != '\0')
 	{

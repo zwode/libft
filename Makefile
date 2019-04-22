@@ -6,7 +6,7 @@
 #    By: zwode <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/21 03:47:42 by zwode             #+#    #+#              #
-#    Updated: 2019/04/21 03:52:28 by zwode            ###   ########.fr        #
+#    Updated: 2019/04/22 04:08:10 by zwode            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS = ft_atoi.c ft_memccpy.c ft_strchr.c ft_strncmp.c \
 	   ft_putnbr.c ft_strlen.c \
 	   ft_putnbr_fd.c ft_strmap.c ft_tolower.c \
 	   ft_putstr.c ft_strmapi.c ft_toupper.c \
-	   ft_putstr_fd.c \
+	   ft_putstr_fd.c ft_lstnew.c\
 	   ft_memalloc.c ft_strcat.c ft_strncat.c
 
 OBJS = ${SRCS:.c=.o}

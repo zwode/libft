@@ -6,7 +6,7 @@
 /*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 23:07:00 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/20 23:08:59 by zwode            ###   ########.fr       */
+/*   Updated: 2019/04/23 05:17:34 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr(char const *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write(1, str, ft_strlen(str));
 }

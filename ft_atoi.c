@@ -6,15 +6,22 @@
 /*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 04:18:05 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/21 04:18:07 by zwode            ###   ########.fr       */
+/*   Updated: 2019/04/23 04:34:43 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define PROBS (str[i] == ' ' || str[i] == '\f' || str[i] == '\t')
-#define SBORP (str[i] == '\v' || str[i] == '\r' || str[i] == '\n')
 
-int		ft_atoi(const char *str)
+static int		probel(char i)
+{
+	if (i == ' ' || i == '\f' || i == '\t')
+		return (1);
+	if (i == '\v' || i == '\r' || i == '\n')
+		return (1);
+	return (0);
+}
+
+int				ft_atoi(const char *str)
 {
 	int				i;
 	unsigned long	b;
@@ -23,7 +30,7 @@ int		ft_atoi(const char *str)
 	b = 0;
 	sign = 0;
 	i = 0;
-	while (PROBS || SBORP)
+	while (probel(str[i]))
 		i++;
 	if (str[i] == '-')
 		sign = 1;

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 20:03:03 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/24 03:04:07 by zwode            ###   ########.fr       */
+/*   Created: 2019/07/19 08:52:00 by zwode             #+#    #+#             */
+/*   Updated: 2019/07/19 08:52:25 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t				i;
-	unsigned char		*dest;
-	unsigned const char	*sour;
+	t_list	*ptr;
+	t_list	*tmp;
 
-	if (!(dst) && !(src))
-		return (NULL);
-	i = 0;
-	dest = (unsigned char*)dst;
-	sour = (unsigned char*)src;
-	while (i < n)
+	ptr = *alst;
+	while (ptr)
 	{
-		dest[i] = sour[i];
-		if (sour[i] == (unsigned char)c)
-			return (dst + i + 1);
-		i++;
+		tmp = ptr;
+		ft_lstdelone(&ptr, del);
+		ptr = tmp->next;
 	}
-	return (0);
+	*alst = NULL;
 }

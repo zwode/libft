@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zwode <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: zwode <zwode@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 18:37:14 by zwode             #+#    #+#             */
-/*   Updated: 2019/04/23 04:45:10 by zwode            ###   ########.fr       */
+/*   Updated: 2019/07/19 08:57:13 by zwode            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,21 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstaddend(t_list **alst, t_list *new);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+char				*ft_itoa(int n);
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_strmap(char const *s, char (*f)(char));
+void				ft_strdel(char **as);
+void				ft_memdel(void **ap);
+char				*ft_strnew(size_t size);
 void				ft_strclr(char *s);
+void				ft_freesh(char	*str);
 void				ft_striter(char *s, void (*f)(char *));
 char				*ft_strcpy(char *dst, const char *src);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));

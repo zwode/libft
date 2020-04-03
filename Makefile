@@ -23,14 +23,14 @@ SRCS=ft_atoi.c ft_bzero.c ft_isalnum.c \
 	ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c \
 	ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c \
 	ft_strcpy.c ft_strdel.c \
-	ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c \
+	ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c get_next_line.c\
 	ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c \
 	ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c \
 	ft_strrchr.c ft_strsplit.c ft_strstr.c \
 	ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c
 
 OBJECTS=ft_atoi.o ft_bzero.o ft_isalnum.o \
-		ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o \
+		ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o get_next_line.o\
 		ft_itoa.o ft_lstadd.o ft_lstaddend.o \
 		ft_lstdel.o ft_lstdelone.o ft_lstiter.o ft_lstmap.o ft_lstnew.o \
 		ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o ft_memcpy.o \
@@ -47,13 +47,19 @@ OBJECTS=ft_atoi.o ft_bzero.o ft_isalnum.o \
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(SRCS) -I $(INCLUDES)
-	ar rc $(NAME) $(OBJECTS)
+	@gcc -c $(FLAGS) $(SRCS) -I $(INCLUDES)
+	@ar rc $(NAME) $(OBJECTS)
+	@echo "Compiled"
 
 clean:
-	/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
+	@echo "Clean"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
+	@echo "Fclean"
 
-re: fclean all
+re: 
+	fclean 
+	all
+	@echo "RE"
